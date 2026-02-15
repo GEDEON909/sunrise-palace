@@ -1,0 +1,253 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+    color:#333;
+}
+
+/* ===== HEADER ===== */
+header{
+    background:linear-gradient(90deg,#0a1f44,#112b66);
+    padding:15px 0;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav{
+    width:90%;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:white;
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#ffd700;
+}
+
+.banner{
+    height:100vh;
+    background-image: url("images/ht2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    color:white;
+}
+
+/* Couche sombre par dessus l'image */
+.banner::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+}
+
+/* Texte au dessus */
+.banner h1{
+    position:relative;
+    font-size:55px;
+    z-index:1;
+    animation:fadeIn 2s ease-in-out;
+}
+
+
+/* ===== SECTIONS ===== */
+section{
+    padding:80px 10%;
+    animation:fadeUp 1.5s ease;
+}
+
+section h2{
+    margin-bottom:20px;
+    color:#0a1f44;
+    font-size:30px;
+    position:relative;
+}
+
+section h2::after{
+    content:"";
+    width:60px;
+    height:3px;
+    background:#ffd700;
+    position:absolute;
+    left:0;
+    bottom:-10px;
+}
+
+section p{
+    line-height:1.8;
+    margin-top:20px;
+}
+
+/* ===== GALERIE ===== */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:12px;
+    transition:0.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* ===== FORM ===== */
+form{
+    max-width:600px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+input, textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+input:focus, textarea:focus{
+    border-color:#0a1f44;
+    outline:none;
+}
+
+button{
+    padding:12px 25px;
+    background:#0a1f44;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#ffd700;
+    color:black;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background:#0a1f44;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes slideDown{
+    from{transform:translateY(-50px); opacity:0;}
+    to{transform:translateY(0); opacity:1;}
+}
+
+@keyframes fadeUp{
+    from{transform:translateY(40px); opacity:0;}
+    to{transform:translateY(0); opacity:1;}
+}
+
+/* ===== RESPONSIVE MOBILE ===== */
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+    }
+
+    nav ul{
+        flex-direction:column;
+        margin-top:15px;
+    }
+
+    nav ul li{
+        margin:10px 0;
+    }
+
+    .banner h1{
+        font-size:30px;
+        padding:15px;
+    }
+
+    section{
+        padding:50px 5%;
+    }
+}
+/* ===== FEATURES ===== */
+.features{
+    display:flex;
+    gap:30px;
+    margin-top:40px;
+    flex-wrap:wrap;
+}
+
+.box{
+    flex:1;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.box:hover{
+    transform:translateY(-10px);
+}
+
+.box h3{
+    margin-bottom:15px;
+    color:#0a1f44;
+}
